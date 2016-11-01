@@ -32,13 +32,12 @@ void draw(Wall wall)
 {
     int xx=wall.x/3.5;
     int yy=wall.y/3.5;
-    
-    glBegin(GL_QUADS);						    // Drawing Using Quads
+    glBegin(GL_QUADS);						// Drawing Using Quads
     glVertex2i( 250+xx , 250+yy);				// Top
     glVertex2i( 250+xx , 255+yy );				// Bottom Left
     glVertex2i( 255+xx , 255+yy );				// Bottom Right
     glVertex2i( 255+xx , 250+yy );				// Bottom Right
-	glEnd();
+    glEnd();
 }
 
 //***********************************************************
@@ -107,8 +106,8 @@ void draw_square(int x, int y, int w, int l){
 void draw_circle(int x1, int y1,int r1,int cp){
 
     int i, circle_points = cp;
-	float angle;
-    
+    float angle;
+	
     glBegin(GL_TRIANGLE_FAN);
     for (i=0; i < circle_points; i++)
     {
@@ -162,20 +161,17 @@ void Display(void){
     draw_circle(350, 380, 30,200);
    
     glColor3f(0.3, 0.55, 1);
-   draw_circle(340,380,25,200);
+    draw_circle(340,380,25,200);
    
     for (int i=0; i<3; i++) {
-        for(int j=0;j<5;j++){
-        
+        for(int j=0;j<5;j++)
+	{
             glColor3f(0.2, 1, 0);
             draw_triangle(120+j*60, 180+i*20, 50, 30);
             glColor3f(0.4, 0.3, 0.2);
-            draw_square(140+j*60, 150, 15,30 );
-        
+            draw_square(140+j*60, 150, 15,30 );        
         }
     }
-
-   
 
     snow();
  
@@ -224,11 +220,11 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv);
 	glutInitWindowSize( WINDOW_WIDTH, WINDOW_HEIGHT );
 	glutInitWindowPosition(200, 200 );
-    glutInitWindowSize(500,500);
+        glutInitWindowSize(500,500);
 	windowID=glutCreateWindow("My Snow Globe");
-    glutKeyboardFunc(keyb);
+        glutKeyboardFunc(keyb);
 	glutInitDisplayMode( GLUT_SINGLE | GLUT_RGB );
-    glutReshapeFunc(myreshape);
+        glutReshapeFunc(myreshape);
 	glutDisplayFunc(&Display);
 	init();
 	glutMainLoop();

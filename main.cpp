@@ -115,7 +115,6 @@ void draw_circle(int x1, int y1,int r1,int cp){
         glVertex2f(x1 + (r1 * cos(angle)), y1 + (r1 * sin(angle)));
     }
     glEnd();
-
 }
 
 //***********************************
